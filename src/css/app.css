@@ -7083,6 +7083,42 @@ button.close {
 }
 body {
   background: #ffffff;
+  overflow: hidden;
+}
+.full-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.container h1 {
+  font-size: 57px;
+}
+.container h3 {
+  font-size: 44px;
+}
+.container h4 {
+  font-size: 28px;
+}
+.container .content-panel {
+  position: absolute;
+  top: 45%;
+  bottom: 0;
+  height: 865px;
+  width: 100%;
+  padding: 35px 35px 15px 35px;
+  background: #ffffff;
+  opacity: 0.9;
 }
 .toolbar {
   position: fixed !important;
