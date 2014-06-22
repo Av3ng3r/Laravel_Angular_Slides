@@ -3,7 +3,7 @@ module.exports = function(grunt) {
         coffee: {
             compile: {
                 expand: true,
-                cwd: './src/resources/app/coffee',
+                cwd: './src/resources/coffee',
                 src: ['**/*.coffee'],
                 dest: './src/js',
                 ext: '.js'
@@ -12,8 +12,8 @@ module.exports = function(grunt) {
         less: {
             compile: {
                 expand: true,
-                cwd: './src/resources/app/less',
-                src: ['**/*.less', '!vendor/eve/*.less', '!vendor/eve/fontawesome/*.less', '!vendor/bootstrap/*.less', '!vendor/bootstrap/fontawesome/*.less', '!vendor/bootstrap/mixins/*.less'],
+                cwd: './src/resources/less',
+                src: ['**/*.less', '!vendor/bootstrap/*.less', '!vendor/bootstrap/fontawesome/*.less', '!vendor/bootstrap/mixins/*.less'],
                 dest: './src/css',
                 ext: '.css'
             }
