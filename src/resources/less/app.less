@@ -19,18 +19,31 @@ body {
 
 .container {
     h1 { font-size: floor((@font-size-base * 3.6)); }
-    h3 { font-size: ceil((@font-size-base * 2.7)); }
+    h3 { font-size: ceil((@font-size-base * 2.7)); margin-bottom: 35px; }
     h4 { font-size: ceil((@font-size-base * 1.75));}
+    h5 { font-size: ceil((@font-size-base * 1.45));}
 
     .content-panel {
         position: absolute;
-        top: 45%;
+        top: 25px;
         bottom: 0;
-        height: 865px;
-        width: 100%;
+        height: 600px;
+        width: 98%;
         padding: 35px 35px 15px 35px;
         background: #ffffff;
-        opacity: 0.9;
+        opacity: 0.93;
+
+        .slide-lists {
+            text-align: left;
+
+            li {
+                padding: 15px 0 5px 0;
+
+                h5 {
+                    font-weight: 400;
+                }
+            }
+        }
     }
 }
 

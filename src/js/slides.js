@@ -9,11 +9,21 @@
       },
       'laravel': {
         label: 'Laravel',
-        content: 'This is page content. that has some more content'
+        content: 'What is it?',
+        items: {
+          'Free, open source PHP web application framework': 'Free, open source PHP web application framework',
+          'Powerful and Scalable MVC': 'Powerful and Scalable MVC',
+          'an API based framework': 'an API based framework'
+        }
       },
       'angular': {
         label: 'Angular',
-        content: 'This is page content. that has some more content'
+        content: 'What is it?',
+        items: {
+          'Structural framework for dynamic web apps': 'Structural framework for dynamic web apps',
+          'HTML as your template language': 'HTML as your template language',
+          'Data binding and Dependency Injection': 'Data binding and Dependency Injection'
+        }
       },
       'solid': {
         label: 'Solid principle',

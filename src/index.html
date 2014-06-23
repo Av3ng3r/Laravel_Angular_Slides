@@ -18,9 +18,10 @@
                     <div class="text-center">
                         <h1>{{page.label}}</h1>
                         <h3>{{page.content}}</h3>
-                        <br />
-                        <br />
                         <h4>{{page.author}}</h4>
+                        <ul class="slide-lists">
+                            <li ng-repeat="item in page.items"><h5>{{item}}</h5></li>
+                        </ul>
                     </div>
                 </div>
             </div>
