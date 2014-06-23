@@ -12,8 +12,8 @@
         content: 'What is it?',
         items: {
           'Free, open source PHP web application framework': 'Free, open source PHP web application framework',
-          'Powerful and Scalable MVC': 'Powerful and Scalable MVC',
-          'an API based framework': 'an API based framework'
+          'Powerful and Scalable': 'Powerful and Scalable',
+          'An API based framework': 'An API based framework'
         }
       },
       'angular': {
@@ -26,11 +26,42 @@
         }
       },
       'solid': {
-        label: 'Solid principle',
-        content: 'This is page content. that has some more content'
+        label: 'Solid principles',
+        content: 'Single responsibility, Open-closed, Liskov substitution, Interface segregation and Dependency inversion',
+        items: {
+          '5 Basic principles of OOP & design.': '5 Basic principles of OOP & design.',
+          'Code Easier to maintain': 'Code Easier to maintain',
+          'Easier to extend over time': 'Easier to extend over time'
+        }
+      },
+      'solid_two': {},
+      'demo': {
+        'https://github.com/laravel/laravel': 'https://github.com/laravel/laravel'
+      },
+      'routes': {
+        label: 'We\'ll need some routes',
+        content: '',
+        items: {
+          'Home page [ / ]': 'Home page [ / ]',
+          'Catchall route [ redirects to / ]': 'Catchall route [ redirects to / ]',
+          'One API route [ /api/... ]': 'One API route [ /api/... ]'
+        }
+      },
+      'routes_view': {
+        label: 'Routes',
+        content: 'Top-down (RESTFUL) view of our application',
+        img_src: '16.png'
+      },
+      'backend_done': {
+        label: 'Backend Done'
+      },
+      'angular_files': {
+        label: 'Angular file structure',
+        content: '',
+        img_src: '17.png'
       }
     };
-    pageNames = ['home', 'laravel', 'angular', 'solid'];
+    pageNames = ['home', 'laravel', 'angular', 'solid', 'routes', 'routes_view', 'backend_done', 'angular_files'];
     getContent = function() {
       return content;
     };
