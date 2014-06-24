@@ -34,9 +34,102 @@
           'Easier to extend over time': 'Easier to extend over time'
         }
       },
-      'solid_two': {},
+      'solid_two': {
+        label: 'Uncle Bob',
+        items: {
+          'A class should have one, and only one, reason to change.': 'A class should have one, and only one, reason to change.'
+        }
+      },
+      'responsibilities': {
+        label: 'Responsibilities',
+        content: 'Have profound long term effects',
+        items: {
+          'Maintainability': 'Maintainability',
+          'Flexibility': 'Flexibility'
+        }
+      },
+      'responsibilities_two': {
+        label: 'Definition',
+        items: {
+          'Family of functions that serves one actor': 'Family of functions that serves one actor'
+        }
+      },
+      'users': {
+        label: 'Expects Value',
+        content: 'Value will save or make money',
+        items: {
+          'They pay us for value': 'They pay us for value'
+        }
+      },
+      'users_value_secondary': {
+        label: 'The Values',
+        content: 'Secondary',
+        items: {
+          'Expected behaviour': 'Expected behaviour',
+          'Without bugs, crashes, delays': 'Without bugs, crashes, delays',
+          'Meets current needs': 'Meets current needs'
+        }
+      },
+      'change_request': {
+        label: 'Change needed',
+        content: 'Software gets out of sync with current needs',
+        items: {
+          'Users': 'Users',
+          'Product owner': 'Product owner',
+          'Feature requests': 'Feature requests'
+        }
+      },
+      'users_value_primary': {
+        label: 'The Values',
+        content: 'Primary',
+        items: {
+          'Flexible system': 'Flexible system',
+          'More needs are met': 'More needs are met',
+          'Profitable': 'Profitable'
+        }
+      },
+      'together': {
+        label: 'Bringing it together',
+        content: '1st responsibility to keep primary value high',
+        items: {
+          'Good for the business': 'Good for the business',
+          'Easy to change': 'Easy to change',
+          'Meets user\'s needs': 'Meets user\'s needs'
+        }
+      },
       'demo': {
-        'https://github.com/laravel/laravel': 'https://github.com/laravel/laravel'
+        label: 'Demo',
+        content: 'Laravel and Angular comment system',
+        items: {
+          'https://github.com/laravel/laravel': 'https://github.com/laravel/laravel',
+          'Angular as front end': 'Angular as front end',
+          'MySQL DB': 'MySQL DB',
+          'Single responsibility': 'Single responsibility'
+        }
+      },
+      'composer': {
+        label: 'Composer',
+        content: 'Setup app composer',
+        items: {
+          'Manage dependencies': 'Manage dependencies',
+          'Easier autoloads': 'Easier autoloads'
+        }
+      },
+      'composertwo': {
+        content: 'Run install',
+        img_src: '2.png'
+      },
+      'app_one': {
+        content: 'App structure',
+        img_src: '3.png'
+      },
+      'app_two': {
+        content: 'Create DB',
+        img_src: '4.png'
+      },
+      'app_three': {
+        content: 'You have arrived',
+        img_src: '5.png'
       },
       'routes': {
         label: 'We\'ll need some routes',
@@ -53,7 +146,8 @@
         img_src: '16.png'
       },
       'backend_done': {
-        label: 'Backend Done'
+        label: 'Backend Done',
+        content: 'It\'s that easy'
       },
       'angular_files': {
         label: 'Angular file structure',
@@ -61,7 +155,10 @@
         img_src: '17.png'
       }
     };
-    pageNames = ['home', 'laravel', 'angular', 'solid', 'routes', 'routes_view', 'backend_done', 'angular_files'];
+    pageNames = [];
+    jQuery.each(content, function(name, page) {
+      return pageNames.push(name);
+    });
     getContent = function() {
       return content;
     };
@@ -97,7 +194,12 @@
       }
       if (e.keyCode === 37) {
         page = $scope.pageNames.indexOf($scope.getCurrentPage());
-        return $scope.setCurrentPage($scope.pageNames[page - 1]);
+        if (page - 1 < 0) {
+          page = $scope.pageNames.length - 1;
+        } else {
+          page -= 1;
+        }
+        return $scope.setCurrentPage($scope.pageNames[page]);
       }
     };
     $scope.currentPage = 'home';
@@ -204,7 +306,7 @@
             left: -element.width()
           });
           TweenMax.to(element, 0.2, {
-            alpha: 0.8
+            alpha: 0.96
           });
           TweenMax.to(element, 0.5, {
             left: 0,
