@@ -1,6 +1,11 @@
 angular.module('website', ['ngAnimate'])
     .constant('TweenMax', TweenMax)
     .factory 'ContentService', () ->
+
+        #
+        # START POMODORO
+        #
+
         content = {
             'home': {
                 label: 'Welcome',
@@ -24,6 +29,7 @@ angular.module('website', ['ngAnimate'])
                     'HTML as your template language',
                     'Data binding and Dependency Injection',
                 }
+                # Also ng-repeat automatically orders alphabetically !!
             },
             'solid': {
                 label: 'Solid principles',
@@ -33,12 +39,28 @@ angular.module('website', ['ngAnimate'])
                     'Code Easier to maintain',
                     'Easier to extend over time',
                 }
+                # a class should have only a single responsibility
+                # software entities … should be open for extension, but closed for modification.
+                # objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+                # many client-specific interfaces are better than one general-purpose interface
+                # one should “Depend upon Abstractions. Do not depend upon concretions (laravel does this very well)
             },
             'solid_two': {
+                label: 'Single responsibility',
+                items: {
+                    'Every class must have single concern',
+                    'Must be encapsulated in that class',
+                    'Services must be aligned with that concern',
+                }
+            },
+            'solid_three': {
                 label: 'Uncle Bob',
                 items: {
-                    'A class should have one, and only one, reason to change.',
+                    'A class (module) should have one, and only one, reason to change.',
+                    'Family of functions that serves one actor',
                 }
+                # Adhering to the SRP and has long term effects
+                # if we need to change the way we delete users, only one class needs to be updated.
             },
             'responsibilities': {
                 label: 'Responsibilities',
@@ -48,18 +70,13 @@ angular.module('website', ['ngAnimate'])
                     'Flexibility',
                 }
             },
-            'responsibilities_two': {
-                label: 'Definition',
-                items: {
-                    'Family of functions that serves one actor',
-                }
-            },
             'users': {
                 label: 'Expects Value',
                 content: 'Value will save or make money',
                 items: {
                     'They pay us for value',
                 }
+                # Software we build them will either save them money or make them money
             },
             'users_value_secondary': {
                 label: 'The Values',
@@ -69,6 +86,9 @@ angular.module('website', ['ngAnimate'])
                     'Without bugs, crashes, delays',
                     'Meets current needs'
                 }
+                # Secondary value is high when SW meets current needs
+                # Current needs often makes of inflexible app structure
+                # Users needs changes
             },
             'change_request': {
                 label: 'Change needed',
@@ -84,9 +104,13 @@ angular.module('website', ['ngAnimate'])
                 content: 'Primary',
                 items: {
                     'Flexible system',
-                    'More needs are met',
+                    'More needs are met over time',
                     'Profitable',
                 }
+                # ( Focus on this a bit )
+                # High primary value means that initially the secondary value will be lower
+                # Up to devs to mitigate those client expectations
+                # Secondary value will grow over time and match primary value when program is complete
             },
 
             'together': {
@@ -97,15 +121,34 @@ angular.module('website', ['ngAnimate'])
                     'Easy to change',
                     'Meets user\'s needs',
                 }
+                # High changability makes for easy adaptations
+                # Easy adaptations makes evolving less of a pain
+                # Evolving with clients makes clients happy
             },
             'demo': {
                 label: 'Demo',
                 content:'Laravel and Angular comment system',
                 items: {
-                    'https://github.com/laravel/laravel',
+                    'https://github.com/laravel/laravel (4.2)',
                     'Angular as front end',
                     'MySQL DB',
                     'Single responsibility'
+                }
+            },
+            'what_to_show': {
+                label: 'Laravel',
+                items: {
+                    'RESTful controllers',
+                    'Unit testing',
+                    'Easy routing'
+                }
+            },
+            'what_to_show_two': {
+                label: 'Angular',
+                items: {
+                    'Templating',
+                    'Services',
+                    'Front Controllers'
                 }
             },
             'composer': {
@@ -113,37 +156,67 @@ angular.module('website', ['ngAnimate'])
                 content: 'Setup app composer',
                 items: {
                     'Manage dependencies',
-                    'Easier autoloads'
+                    'Easier autoloading of classes',
+                    'Download base framework (https://github.com/laravel/laravel)'
                 }
             },
             'composertwo': {
-                #label: 'Composer',
                 content: 'Run install',
                 img_src: '2.png'
             },
             'app_one': {
-                #label: 'Composer',
                 content: 'App structure',
                 img_src: '3.png'
             },
             'app_two': {
-            #label: 'Composer',
                 content: 'Create DB',
+                items: {
+                    'Link DB details in /app/config/database.php',
+                }
                 img_src: '4.png'
             },
             'app_three': {
-            #label: 'Composer',
                 content: 'You have arrived',
                 img_src: '5.png'
             },
-            'routes': {
-                label: 'We\'ll need some routes',
-                content: '',
+            'app_migrate': {
+                content: 'Setup migrations',
+                img_src: '6.png'
+            },
+            'app_migrate_two': {
+                label: 'Adds a migrate file',
+                img_src: '8.png'
+                # File date for deployment
+                # Uses Blueprint schema to build table
+            },
+            'app_migrate_three': {
+                label: 'Add Fields',
+                img_src: '7.png'
                 items: {
-                    'Home page [ / ]',
-                    'Catchall route [ redirects to / ]',
-                    'One API route [ /api/... ]',
+                    'Comment text -> (string)',
+                    'Author name  -> (string)',
                 }
+            },
+            'app_migrate_four': {
+                content: 'Run migrations',
+                img_src: '9.png'
+            },
+            # Will run all your migrations based on date
+            'app_seed': {
+                content: 'Seeding your app',
+                img_src: '10.png'
+            },
+            # To take the hastle out of populating your DB manually
+            # A way of testing your models (finger quotes)
+
+            'app_seed_two': {
+                content: 'Run seeds',
+                img_src: '11.png'
+            },
+            # If class not found, remember to run your composer dump-autoload
+            'app_controllers': {
+                content: 'Setup resource controller',
+                img_src: '15.png'
             },
             'routes_view': {
                 label: 'Routes',
@@ -158,7 +231,30 @@ angular.module('website', ['ngAnimate'])
                 label: 'Angular file structure',
                 content: '',
                 img_src: '17.png'
-            }
+            },
+            'angular_service': {
+                content: 'Service will handle all data calls',
+                img_src: '18.png'
+            },
+            'angular_controller': {
+                content: 'Controller binds data to html',
+                img_src: '19.png'
+            },
+            # Controller binds data to html
+
+            'angular_app': {
+                content: 'App loads modules',
+                img_src: '20.png'
+            },
+
+            'done': {
+                label: 'Done',
+                content: 'Questions?'
+            },
+
+            # SHOW DEMO HERE
+
+            # SHOW CONTROLLER UNIT TESTS IF TIME LEFT
         }
 
         pageNames = []

@@ -35,9 +35,18 @@
         }
       },
       'solid_two': {
+        label: 'Single responsibility',
+        items: {
+          'Every class must have single concern': 'Every class must have single concern',
+          'Must be encapsulated in that class': 'Must be encapsulated in that class',
+          'Services must be aligned with that concern': 'Services must be aligned with that concern'
+        }
+      },
+      'solid_three': {
         label: 'Uncle Bob',
         items: {
-          'A class should have one, and only one, reason to change.': 'A class should have one, and only one, reason to change.'
+          'A class (module) should have one, and only one, reason to change.': 'A class (module) should have one, and only one, reason to change.',
+          'Family of functions that serves one actor': 'Family of functions that serves one actor'
         }
       },
       'responsibilities': {
@@ -46,12 +55,6 @@
         items: {
           'Maintainability': 'Maintainability',
           'Flexibility': 'Flexibility'
-        }
-      },
-      'responsibilities_two': {
-        label: 'Definition',
-        items: {
-          'Family of functions that serves one actor': 'Family of functions that serves one actor'
         }
       },
       'users': {
@@ -84,7 +87,7 @@
         content: 'Primary',
         items: {
           'Flexible system': 'Flexible system',
-          'More needs are met': 'More needs are met',
+          'More needs are met over time': 'More needs are met over time',
           'Profitable': 'Profitable'
         }
       },
@@ -101,10 +104,26 @@
         label: 'Demo',
         content: 'Laravel and Angular comment system',
         items: {
-          'https://github.com/laravel/laravel': 'https://github.com/laravel/laravel',
+          'https://github.com/laravel/laravel (4.2)': 'https://github.com/laravel/laravel (4.2)',
           'Angular as front end': 'Angular as front end',
           'MySQL DB': 'MySQL DB',
           'Single responsibility': 'Single responsibility'
+        }
+      },
+      'what_to_show': {
+        label: 'Laravel',
+        items: {
+          'RESTful controllers': 'RESTful controllers',
+          'Unit testing': 'Unit testing',
+          'Easy routing': 'Easy routing'
+        }
+      },
+      'what_to_show_two': {
+        label: 'Angular',
+        items: {
+          'Templating': 'Templating',
+          'Services': 'Services',
+          'Front Controllers': 'Front Controllers'
         }
       },
       'composer': {
@@ -112,7 +131,8 @@
         content: 'Setup app composer',
         items: {
           'Manage dependencies': 'Manage dependencies',
-          'Easier autoloads': 'Easier autoloads'
+          'Easier autoloading of classes': 'Easier autoloading of classes',
+          'Download base framework (https://github.com/laravel/laravel)': 'Download base framework (https://github.com/laravel/laravel)'
         }
       },
       'composertwo': {
@@ -125,20 +145,46 @@
       },
       'app_two': {
         content: 'Create DB',
+        items: {
+          'Link DB details in /app/config/database.php': 'Link DB details in /app/config/database.php'
+        },
         img_src: '4.png'
       },
       'app_three': {
         content: 'You have arrived',
         img_src: '5.png'
       },
-      'routes': {
-        label: 'We\'ll need some routes',
-        content: '',
+      'app_migrate': {
+        content: 'Setup migrations',
+        img_src: '6.png'
+      },
+      'app_migrate_two': {
+        label: 'Adds a migrate file',
+        img_src: '8.png'
+      },
+      'app_migrate_three': {
+        label: 'Add Fields',
+        img_src: '7.png',
         items: {
-          'Home page [ / ]': 'Home page [ / ]',
-          'Catchall route [ redirects to / ]': 'Catchall route [ redirects to / ]',
-          'One API route [ /api/... ]': 'One API route [ /api/... ]'
+          'Comment text -> (string)': 'Comment text -> (string)',
+          'Author name  -> (string)': 'Author name  -> (string)'
         }
+      },
+      'app_migrate_four': {
+        content: 'Run migrations',
+        img_src: '9.png'
+      },
+      'app_seed': {
+        content: 'Seeding your app',
+        img_src: '10.png'
+      },
+      'app_seed_two': {
+        content: 'Run seeds',
+        img_src: '11.png'
+      },
+      'app_controllers': {
+        content: 'Setup resource controller',
+        img_src: '15.png'
       },
       'routes_view': {
         label: 'Routes',
@@ -153,6 +199,22 @@
         label: 'Angular file structure',
         content: '',
         img_src: '17.png'
+      },
+      'angular_service': {
+        content: 'Service will handle all data calls',
+        img_src: '18.png'
+      },
+      'angular_controller': {
+        content: 'Controller binds data to html',
+        img_src: '19.png'
+      },
+      'angular_app': {
+        content: 'App loads modules',
+        img_src: '20.png'
+      },
+      'done': {
+        label: 'Done',
+        content: 'Questions?'
       }
     };
     pageNames = [];
