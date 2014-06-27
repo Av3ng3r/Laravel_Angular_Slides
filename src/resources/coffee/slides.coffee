@@ -184,7 +184,7 @@ angular.module('website', ['ngAnimate'])
                 img_src: '6.png'
             },
             'app_migrate_two': {
-                label: 'Adds a migrate file',
+                label: 'Adds a migration file',
                 img_src: '8.png'
                 # File date for deployment
                 # Uses Blueprint schema to build table
